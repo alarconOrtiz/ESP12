@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      <title>ESP8266 Json Ajax</title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+   </head>
+ 
+   <body>
+      <table>
+         <img src="./img/NodeMCU_V2.png" alt="NODE MCU DIO" height="450" width="450">
+         <tr>
+            <td>
+               <label><input type="checkbox" id="DIO_0" value="DIO0">DIO 0</label>
+            </td>
+            <td>
+               <label><input type="checkbox" id="DIO_1" value="DIO1">DIO 1</label>
+            </td>
+            <td>
+               <label><input type="checkbox" id="DIO_2" value="DIO2">DIO 2</label>
+            </td>
+         </tr>
+         <tr>
+            <td>
+               <label><input type="checkbox" id="DIO_3" value="DIO3">DIO 3</label>
+            </td>
+            <td>
+               <label><input type="checkbox" id="DIO_4" value="DIO4">DIO 4</label>
+            </td>
+            <td>
+               <label><input type="checkbox" id="DIO_5" value="DIO5">DIO 5</label>
+            </td>
+         </tr>
+         <tr>
+            <td>
+               <label><input type="checkbox" id="DIO_9" value="DIO9">DIO 9</label>
+            </td>
+            <td>
+               <label><input type="checkbox" id="DIO_10" value="DIO10">DIO 10</label>
+            </td>
+            <td>
+               <label><input type="checkbox" id="DIO_12" value="DIO12">DIO 12</label>
+            </td>
+         </tr>
+         <tr>
+            <td>
+               <label><input type="checkbox" id="DIO_13" value="DIO13">DIO 13</label>
+            </td>
+            <td>
+               <label><input type="checkbox" id="DIO_14" value="DIO14">DIO 14</label>
+            </td>
+            <td>
+               <label><input type="checkbox" id="DIO_15" value="DIO15">DIO 15</label>
+            </td>
+            <td>
+               <label><input type="checkbox" id="DIO_16" value="DIO16">DIO 16</label>
+            </td>
+         </tr>
+      </table>
+      <div>
+         <br> ADC </br>
+         <input type="ADC" id="ADC" name="ADC">
+      </div>
+      <div>
+        Value:<br>
+         <input type="text" id="ledNumber" name="ledNumber" value="10" checked><br>
+         <input type="radio" id="ledOn" name="status" value="true" checked>
+         <label for="ledOn">ON</label><br>
+         <input type="radio" id="ledOff" name="status" value="false">
+         <label for="ledOff">OFF</label><br>
+         <button type="button" onclick="sendData()">Send data</button>
+      </div>
+      <div>
+         <br>
+         <button type="button" onclick="getData()">Get Data!</button>
+         <label id="receivedText"/>
+      </div>
+   </body>
+   
+    <script type="text/javascript" src="./js/main.js"></script>
+</html>
