@@ -17,11 +17,29 @@ connection.onclose = function () {
   console.log('WebSocket connection closed');
 };
  
+function sendDioStatus()
+{
+  let dio_data;
+  let json;
+  let dio_ports = document.getElementsByClassName('DioESP12');
+  dio_ports.forEach(element => {
+    console.log('Dio ',element.id);
+    //crete Data DIO JSON
+    dio_data = {
+      command : "DIO",
+      id      : element,
+      status  : status
+    }
+    json = JSON.stringify(dio_data);
+    connection.send(json);
+  });
+}
 function sendData()
 {
   let ledNumber = document.getElementById('ledNumber');
   let ledStatus = document.querySelector('input[name="status"]:checked');
- 
+  
+
   let data = {
      command : "Set",
      id: ledNumber.value,
@@ -41,7 +59,7 @@ function getData()
  
   connection.send(json);
 }
- 
+ //procces info from Arduino socket.
 function processData(data)
 {
   let json = JSON.parse(data); 
